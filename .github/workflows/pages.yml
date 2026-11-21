@@ -27,10 +27,17 @@ jobs:
         run: python3 scripts/decode-assets.py
       - name: Configure Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - name: Prepare publish folder
+        run: |
+          mkdir -p publish
+          cp index.html styles.css app.js events.json site.json manifest.json sw.js og-image.png .nojekyll publish/
+          cp -r icons fonts images publish/
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: publish
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
