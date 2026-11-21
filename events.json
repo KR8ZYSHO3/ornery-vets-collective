@@ -1,0 +1,14 @@
+{
+  "events": [
+    {
+      "title": "Weekly lunch and support gathering",
+      "when": "Fridays at 12:00 PM",
+      "startDate": "2026-01-02",
+      "endDate": "",
+      "recurring": true,
+      "location": "American Legion Post 21, 520 W Union St, Athens, OH 45701",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=520+W+Union+St,+Athens,+OH+45701",
+      "description": "Publicly listed as open to veterans, active duty, National Guard, and ROTC candidates, and includes lunch. Please confirm before you go — details can change."
+    }
+  ]
+}
