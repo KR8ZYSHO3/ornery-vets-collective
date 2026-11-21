@@ -30,4 +30,4 @@ From this folder:
 python3 -m http.server 8080
 ```
 
-Then open `http://localhost:8080`. Add-to-home-screen and the service worker need a local or HTTPS origin (not a `file://` page).
+If you cloned this repository, first run `python3 scripts/decode-assets.py` to restore images and fonts. Then open `http://localhost:8080`. Add-to-home-screen and the service worker need a local or HTTPS origin (not a `file://` page).
