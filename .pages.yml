@@ -1,0 +1,115 @@
+# Pages CMS configuration — editors sign in at https://app.pagescms.org
+# with a GitHub account that has access to this repository.
+
+settings:
+  content:
+    merge: true
+  commit:
+    identity: user
+    templates:
+      create: "Add {path} (via Pages CMS)"
+      update: "Update {path} (via Pages CMS)"
+      delete: "Delete {path} (via Pages CMS)"
+
+media: media
+
+content:
+  - name: events
+    label: Events
+    type: file
+    path: events.json
+    format: json
+    fields:
+      - name: events
+        label: Events
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title} — {when}"
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: when
+            label: When
+            type: string
+            description: "Text shown on the card, for example Fridays at 12:00 PM or Saturday, Dec 6, 2026, 10:00 AM."
+          - name: startDate
+            label: Start date
+            type: date
+            default: ""
+            description: "Optional. Used to hide one-time events after they pass."
+            options:
+              format: yyyy-MM-dd
+          - name: endDate
+            label: End date
+            type: date
+            default: ""
+            description: "Optional. A one-time event stays visible through this date."
+            options:
+              format: yyyy-MM-dd
+          - name: recurring
+            label: Recurring
+            type: boolean
+            description: "Turn this on for repeating gatherings so they are not hidden automatically."
+          - name: location
+            label: Location
+            type: string
+          - name: mapsUrl
+            label: Maps link
+            type: string
+            description: "Optional Google Maps (or other https) link."
+          - name: description
+            label: Description
+            type: text
+
+  - name: site
+    label: Site settings
+    type: file
+    path: site.json
+    format: json
+    fields:
+      - name: facebookUrl
+        label: Facebook page URL
+        type: string
+        description: "The official page, for example https://www.facebook.com/YourPageName. Leave blank until the real URL is confirmed."
+      - name: missionParagraphs
+        label: Mission
+        type: text
+        list: true
+        description: "Each item is a paragraph on the Home screen. Keep it accurate — do not invent founding dates, people, or programs."
+      - name: volunteerIntro
+        label: Volunteer text
+        type: text
+      - name: volunteerContact
+        label: Volunteer contact
+        type: string
+        description: "Optional public email, phone, or short note for volunteers."
+      - name: donateIntro
+        label: Donate text
+        type: text
+      - name: donateUrl
+        label: Donate link
+        type: string
+        description: "Optional https link. Leave blank if there is no official donation page yet. Do not invent a payment link."
+      - name: contactEmail
+        label: Public email
+        type: string
+      - name: contactPhone
+        label: Public phone
+        type: string
+        description: "Only publish a number the organization has approved."
+      - name: addressLine1
+        label: Address line 1
+        type: string
+      - name: addressLine2
+        label: Address line 2
+        type: string
+      - name: mapsUrl
+        label: Address maps link
+        type: string
+      - name: addressNote
+        label: Address note
+        type: text
