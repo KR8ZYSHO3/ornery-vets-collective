@@ -10,6 +10,18 @@ Visitors to the public site cannot change anything. Only people with access to t
 
 ## First-time setup (do this once)
 
+### Turn on the public website
+
+GitHub requires the repository owner to turn on Pages the first time. This only takes a minute.
+
+1. Open https://github.com/KR8ZYSHO3/ornery-vets-collective/settings/pages
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**. GitHub usually saves this as soon as you choose it.
+3. Open https://github.com/KR8ZYSHO3/ornery-vets-collective/actions/workflows/pages.yml
+4. Click **Run workflow**, leave the branch set to **main**, and click the green **Run workflow** button.
+5. Wait until that run shows a green check (usually about a minute). Then open https://kr8zysho3.github.io/ornery-vets-collective/
+
+### Connect the admin login
+
 1. On your phone or computer, open https://app.pagescms.org
 2. Choose **Sign in with GitHub**.
 3. Use the **KR8ZYSHO3** GitHub account (or another account that has been added as a collaborator on this repository).
